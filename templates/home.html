@@ -1,0 +1,277 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flight Price Prediction</title>
+
+    <style>
+        .navbar::before {
+            content: "";
+            background: url(/static/1.jpg) no-repeat center center/cover;
+            position: absolute;
+            z-index: -1;
+            opacity: 0.9;
+            height: 100%;
+            width: 100%;
+            top: 0px;
+            left: 0px;
+            bottom: 0px;
+            right: 0px;
+        }
+
+        .container {
+            border: 2px solid white;
+            margin: -15px 15px;
+            padding: 40px 0px;
+            width: 70%;
+            height: 70%;
+            display: block;
+            border-radius: 40px;
+            position: absolute;
+            left: 30px;
+            box-shadow: 5px 10px 30px red;
+        }
+
+        #form_group {
+            display: flex;
+            text-align: left;
+            flex-direction: column;
+            color: black;
+            font-weight: bold;
+            font-size: 20px;
+        }
+
+        .navbar h1 {
+            font-size: 40px;
+            color: black;
+        }
+
+        .first {
+            position: relative;
+            left: 80px;
+
+
+        }
+
+        #first {
+            text-align: center;
+            background-color: white;
+            border: 2px solid black;
+            border-radius: 4px;
+            padding: 5px 5px;
+            box-shadow: 5px 10px 30px goldenrod;
+        }
+
+        .second {
+            position: relative;
+            left: 80px;
+        }
+
+        #second {
+            text-align: center;
+            background-color: white;
+            border: 2px solid black;
+            border-radius: 4px;
+            padding: 5px 5px;
+            box-shadow: 5px 10px 30px goldenrod;
+        }
+
+        .third {
+            position: relative;
+            left: 80px;
+        }
+
+        #third {
+            text-align: center;
+            background-color: white;
+            border: 2px solid black;
+            border-radius: 4px;
+            padding: 5px 5px;
+            box-shadow: 5px 10px 30px goldenrod;
+        }
+
+        .fourth {
+            position: absolute;
+            right: 380px;
+        }
+
+        #fourth {
+            text-align: center;
+            background-color: white;
+            border: 2px solid black;
+            border-radius: 4px;
+            padding: 5px 5px;
+            box-shadow: 5px 10px 30px goldenrod;
+        }
+
+        .fifth {
+            position: absolute;
+            right: 380px;
+            margin: 110px 0px;
+
+        }
+
+        #fifth {
+            text-align: center;
+            background-color: white;
+            border: 2px solid black;
+            border-radius: 4px;
+            padding: 5px 5px;
+            cursor: pointer;
+            box-shadow: 5px 10px 30px goldenrod;
+        }
+
+        .sixth {
+            position: absolute;
+            right: 225px;
+            margin: 225px 14px;
+
+
+        }
+
+        #sixth {
+            text-align: center;
+            background-color: white;
+            border: 2px solid black;
+            border-radius: 4px;
+            padding: 5px 10px;
+            cursor: pointer;
+            box-shadow: 5px 10px 30px goldenrod;
+        }
+
+        #sub {
+            display: block;
+            color: white;
+            width: 100px;
+            margin: 48px auto;
+            background-color: black;
+            padding: 4px 5px;
+            border-radius: 20px;
+            cursor: pointer;
+            font-size: 15px;
+            font-weight: bold;
+        }
+
+        .btn #sub:hover {
+            background-color: blue;
+        }
+
+        .pred {
+            display: block;
+            background-color: greenyellow;
+            color: black;
+            text-align: center;
+            margin: -25px auto;
+            padding: 10px 20px;
+            width: 30%;
+            border: 2px solid white;
+            font-size: 20px;
+            
+        }
+
+        .pred:hover{
+            transform: scale(1.2);
+            transition: all 0.6s ease-in-out 0.1s;
+        }
+        .center{
+            position: absolute;
+            bottom: 0px;
+            border: 2px solid white;
+            background-color: white;
+            font-size: 10px;
+            width: 100%;
+            text-align: center;
+            left: 0px;
+            font-weight: bold;
+            padding: 0px 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar">
+        <h1>Flight Price Prediction</h1>
+    </nav>
+    <div class="container">
+        <form action="predict" method="post">
+            <div id="form_group">
+
+                <div class="first">
+                    <h5>Departure Date</h5>
+                    <input type="datetime-local" name="Dep_Time" required="required" id="first">
+                </div>
+
+                <div class="second">
+                    <h5>Arrival Date</h5>
+                    <input type="datetime-local" name="Arrival_Time" required="required" id="second">
+                </div>
+
+                <div class="third">
+                    <h5>Source</h5>
+                    <select name="Source" required="required" id="third">
+                        <option value="Delhi">Delhi</option>
+                        <option value="Kolkata">Kolkata</option>
+                        <option value="Mumbai">Mumbai</option>
+                        <option value="Chennai">Chennai</option>
+                    </select>
+                </div>
+
+                <div class="fourth">
+                    <h5>Destination</h5>
+                    <select name="Destination" required="required" id="fourth">
+                        <option value="Cochin">Cochin</option>
+                        <option value="Delhi">Delhi</option>
+                        <option value="New Delhi">New Delhi</option>
+                        <option value="Hyderabad">Hyderabad</option>
+                        <option value="Kolkata">Kolkata</option>
+                    </select>
+                </div>
+
+                <div class="fifth">
+                    <h5>Stopage</h5>
+                    <select name="stops" required="required" id="fifth">
+                        <option value="0">Non-Stop</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                    </select>
+                </div>
+
+                <div class="sixth">
+                    <h5>Which Airline you want to travel?</h5>
+                    <select name="airline" required="required" id="sixth">
+                        <option value="Jet Airways">Jet Airways</option>
+                        <option value="IndiGo">IndiGo</option>
+                        <option value="Air India">Air India</option>
+                        <option value="Multiple carriers">Multiple carriers</option>
+                        <option value="SpiceJet">SpiceJet</option>
+                        <option value="Vistara">Vistara</option>
+                        <option value="Air Asia">Air Asia</option>
+                        <option value="GoAir">GoAir</option>
+                        <option value="Multiple carriers Premium economy">Multiple carriers Premium economy
+                        </option>
+                        <option value="Jet Airways Business">Jet Airways Business</option>
+                        <option value="Vistara Premium economy">Vistara Premium economy</option>
+                        <option value="Trujet">Trujet</option>
+                    </select>
+                </div>
+
+                <div class="btn">
+                    <button type="submit" id="sub">Submit</button>
+                </div>
+                <h3 class="pred">{{ prediction_text }}</h3>
+
+            </div>
+        </form>
+    </div>
+    <footer>
+        <div class="center">
+            &copy;SMIIT Project: Developed by Mr.Balaprasad Garudkar, email:garudkarbalaji@gmail.com
+        </div>
+    </footer>
+
+</body>
+
+</html>
