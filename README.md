@@ -18,6 +18,9 @@ Flask==1.1.2, Flask-Cors==3.0.10, matplotlib==3.3.4, numpy==1.20.1, pandas==1.2.
 I have deployed this Model on AWS EC2 Instance 
 Link: http://ec2-52-91-122-24.compute-1.amazonaws.com:8080/
 
+### A Glimpse of the web app:
+
+
 
 
 
