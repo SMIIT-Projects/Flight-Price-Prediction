@@ -13,6 +13,13 @@ The Code is written in Python 3.8.5.
 # Used libraries:
 Flask==1.1.2, Flask-Cors==3.0.10, matplotlib==3.3.4, numpy==1.20.1, pandas==1.2.3, scikit-learn==0.24.1, scipy==1.6.1, seaborn==0.11.1, six==1.15.0, threadpoolctl==2.1.0, Werkzeug==1.0.1, wincertstore==0.2.
 
+# Demo:
+
+I have deployed this Model on AWS EC2 Instance 
+Link: http://ec2-52-91-122-24.compute-1.amazonaws.com:8080/
+
+
+
 
 
 
