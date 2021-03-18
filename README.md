@@ -19,7 +19,7 @@ I have deployed this Model on AWS EC2 Instance
 Link: http://ec2-52-91-122-24.compute-1.amazonaws.com:8080/
 
 ### A Glimpse of the web app:
-
+![gif](https://user-images.githubusercontent.com/80674012/111631089-05ee5f00-8819-11eb-8703-0763180e29a9.gif)
 
 
 
