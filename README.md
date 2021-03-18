@@ -4,7 +4,8 @@ This project is all about Flight Price Prediction. Here you will be provided wit
 
 # Data Source:
 For this project I used dataset from kaggle.com. I have uploaded my dataset on GitHub.
-https://github.com/SMIIT-Projects/Flight-Price-Prediction
+
+Link: https://github.com/SMIIT-Projects/Flight-Price-Prediction
 
 # Tools and Technologies:
 The Code is written in Python 3.8.5. 
